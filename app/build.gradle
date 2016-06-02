@@ -24,9 +24,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //    compile 'com.android.support:appcompat-v7:23.4.0'
     //    compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.android.support:support-v4:20.0.0'
-    compile 'com.squareup.okhttp3:okhttp:3.3.1'
-    compile 'com.google.code.gson:gson:2.6.2'
     //    compile files('libs/jpush-sdk-release1.6.3.jar')
     //    compile files('libs/mframework.jar')
     //    compile files('libs/ShareSDK-Core-2.3.12.jar')
@@ -40,5 +37,8 @@ dependencies {
     //    compile files('libs/ShareSDK-Wechat-2.3.12.jar')
     //    compile files('libs/ShareSDK-Wechat-Core-2.3.12.jar')
     //    compile files('libs/ShareSDK-Wechat-Moments-2.3.12.jar')
+    compile 'com.android.support:support-v4:20.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.google.code.gson:gson:2.6.2'
     compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
 }

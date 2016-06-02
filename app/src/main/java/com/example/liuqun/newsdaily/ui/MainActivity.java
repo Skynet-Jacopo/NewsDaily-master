@@ -16,6 +16,7 @@ import com.example.liuqun.newsdaily.view.slidingmenu.SlidingMenu;
 public class MainActivity extends MyBaseActivity {
 
     private Fragment leftFragment,rightFragment;
+    private Fragment fragmentMain,fragmentType;
     public static SlidingMenu      slidingMenu;
     private ImageView iv_set;
     private ImageView iv_user;
@@ -30,6 +31,7 @@ public class MainActivity extends MyBaseActivity {
         iv_set.setOnClickListener(onClickListener);
         iv_user.setOnClickListener(onClickListener);
         initSlidingMenu();
+        showFragmentMain();
     }
 
     private View.OnClickListener onClickListener =new View.OnClickListener() {
@@ -108,5 +110,29 @@ public class MainActivity extends MyBaseActivity {
         }else {
             finish();
         }
+    }
+
+    /**
+     * 显示：“显示新闻更多分类Fragment”
+     */
+    public void showFragmentType() {
+        setTitle("分类");
+        slidingMenu.showContent();
+        if (fragmentType == null)
+            fragmentType = new FragmentType();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.layout_content, fragmentType).commit();
+    }
+    /**
+     * 显示:"显示新闻列表的Fragment"
+     */
+    public void showFragmentMain(){
+        setTitle("资讯");
+        slidingMenu.showContent();
+        if (fragmentMain == null) {
+            fragmentMain =new FragmentMain();
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id
+                .layout_content,fragmentMain).commit();
     }
 }
