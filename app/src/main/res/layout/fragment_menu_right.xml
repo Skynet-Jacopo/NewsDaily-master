@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_slidingmenu_left"
+                tools:context="com.example.liuqun.newsdaily.ui.MenuRightFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:id="@+id/rl_unlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp">
+
+        <ImageView
+            android:id="@+id/iv_unlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/biz_pc_main_info_profile_avatar_bg_dark"/>
+
+        <TextView
+            android:id="@+id/tv_unlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_unlogin"
+            android:layout_marginTop="22dp"
+            android:text="立刻登录"
+            android:textColor="#ffffffff"
+            android:textSize="25sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:paddingBottom="150dip">
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="30px"
+            android:text="更新版本"
+            android:id="@+id/update_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:background="@drawable/share_little_bg"
+            android:layout_marginLeft="10.0dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fun_friend"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/fun_share_weixin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/fun_qq"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/addimport_qq"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/fun_friends"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/fun_share_friends"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/fun_weibo"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/fun_share_weibo"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
