@@ -43,7 +43,7 @@ public class SharedPreferencesUtils {
 		User core = user.getData();
 		editor.putString("userName", core.getUid());
 		editor.putString("headImage", core.getPortrait());
-		editor.commit();
+		editor.apply();
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class SharedPreferencesUtils {
 		SharedPreferences sp = context.getSharedPreferences("user", Context.MODE_PRIVATE);
 		Editor editor = sp.edit();
 		editor.clear();
-		editor.commit();
+		editor.apply();
 	}
 	
 	/**
@@ -86,7 +86,7 @@ public class SharedPreferencesUtils {
 		SharedPreferences sp = context.getSharedPreferences("user", Context.MODE_PRIVATE);
 		Editor editor = sp.edit();
 		editor.putString("imagePath", path);
-		editor.commit();
+		editor.apply();
 	}
 	
 	/**

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.liuqun.newsdaily.common.LogUtil;
 import com.example.liuqun.newsdaily.model.entity.News;
 import com.example.liuqun.newsdaily.model.entity.SubType;
 
@@ -128,6 +129,7 @@ public class NewsDBManager {
 	 * @return 新闻的列表
 	 */
 	public ArrayList<News> queryLoveNews(){
+
 		ArrayList<News> newsList=new ArrayList<News>();
 		SQLiteDatabase db=dbHelper.getReadableDatabase();
 		String sql="select * from lovenews order by _id desc";

@@ -19,23 +19,24 @@ public class SplashActivity extends MyBaseActivity {
 
         ImageView ivSplash = (ImageView) findViewById(R.id.iv_splash);
 
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.logo);
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.fade);
 
         animation.setFillAfter(true);
 
         animation.setAnimationListener(new Animation.AnimationListener() {
+            // TODO: 6/4/2016  便于开发,暂时将动画隐藏
             //动画启动时调用
             @Override
             public void onAnimationStart(Animation animation) {
-
-            }
-            //动画结束时调用
-            @Override
-            public void onAnimationEnd(Animation animation) {
                 Intent intent =new Intent(SplashActivity.this,MainActivity
                         .class);
                 startActivity(intent);
                 finish();
+            }
+            //动画结束时调用
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
             }
             //动画重复时调用
             @Override

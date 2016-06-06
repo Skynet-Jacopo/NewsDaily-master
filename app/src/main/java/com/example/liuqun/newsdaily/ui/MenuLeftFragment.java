@@ -39,17 +39,19 @@ public class MenuLeftFragment extends Fragment {
         @Override
         public void onClick(View v) {
             for (int i = 0; i < rls.length; i++) {
-//                rls[i].setBackgroundColor(0);
+                rls[i].setBackgroundColor(0);
             }
 
             switch (v.getId()){
                 case R.id.rl_news:
                     rls[0].setBackgroundColor(0x33c85555);
+                    ((MainActivity)getActivity()).showFragmentMain();
                     Toast.makeText(getActivity(), "新闻", Toast.LENGTH_SHORT)
                             .show();
                     break;
                 case R.id.rl_reading:
                     rls[1].setBackgroundColor(0x33c85555);
+                    ((MainActivity)getActivity()).showFragmentFavorite();
                     Toast.makeText(getActivity(), "收藏", Toast.LENGTH_SHORT)
                             .show();
                     break;

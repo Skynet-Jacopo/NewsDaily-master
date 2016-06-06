@@ -38,6 +38,10 @@ public class VolleyHttp {
         mImageLoader.get(url, listener);
     }
 
+    public void uploadImage(String url, File file, Response.Listener<String>
+            listener, Response.ErrorListener errorListener){
+
+    }
 
 
 

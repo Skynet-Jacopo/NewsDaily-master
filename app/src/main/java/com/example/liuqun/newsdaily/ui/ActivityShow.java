@@ -16,8 +16,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.example.liuqun.newsdaily.R;
+import com.example.liuqun.newsdaily.common.CommonUtil;
+import com.example.liuqun.newsdaily.common.LogUtil;
 import com.example.liuqun.newsdaily.common.SystemUtils;
+import com.example.liuqun.newsdaily.model.biz.CommentsManager;
+import com.example.liuqun.newsdaily.model.biz.parser.ParserComments;
 import com.example.liuqun.newsdaily.model.db.NewsDBManager;
 import com.example.liuqun.newsdaily.model.entity.News;
 import com.example.liuqun.newsdaily.ui.base.MyBaseActivity;
@@ -103,20 +109,39 @@ public class ActivityShow extends MyBaseActivity {
                     finish();
                     break;
                 case R.id.textView2:
-                    Bundle bundle =new Bundle();
-                    bundle.putInt("nid",newsitem.getNid());
-                    openActivity(ActivityComment.class,bundle);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("nid", newsitem.getNid());
+                    openActivity(ActivityComment.class, bundle);
                     break;
                 case R.id.imageView_menu:
-                    Toast.makeText(getApplicationContext(), "点了吗?", Toast
-                            .LENGTH_SHORT).show();
-                    if (popupWindow != null &&popupWindow.isShowing()) {
+                    if (popupWindow != null && popupWindow.isShowing()) {
                         popupWindow.dismiss();
-                    }else if (popupWindow != null) {
-                        popupWindow.showAsDropDown(imageViewMenu,0,12);
+                    } else if (popupWindow != null) {
+                        popupWindow.showAsDropDown(imageViewMenu, 0, 12);
                     }
                     break;
             }
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //请求评论数量
+        CommentsManager.commentNum(this, CommonUtil.VERSION_CODE, newsitem
+                .getNid(), new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                int num = ParserComments.parserCommentNum(response.trim());
+                LogUtil.d(LogUtil.TAG, "评论数量------" + num + "");
+
+                tv_commentCount.setText(num + " 跟帖");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ActivityShow.this, "网络异常", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

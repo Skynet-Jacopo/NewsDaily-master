@@ -4,7 +4,7 @@ import android.util.Log;
 
 public class LogUtil {
 
-	public static final String TAG = "新闻随意看升级版";
+	public static final String TAG = "每日新闻";
 	public static boolean isDebug = true;
 	public static boolean isInfo = true;
 	public static boolean isWarn = true;
